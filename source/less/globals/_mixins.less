@@ -1,0 +1,57 @@
+.base() {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.reset() {
+  list-style-type: none;
+}
+
+.resetLink() {
+  color: inherit;
+  text-decoration: none;
+}
+
+.resetButton() {
+  border: none;
+  cursor: pointer;
+}
+
+/* functions */
+/* font */
+.font(@fz, @fw, @lh) {
+  font-family: "Montserrat", "Tahoma", sans-serif;
+  font-size: @fz;
+  font-weight: @fw;
+  line-height: @lh;
+  font-style: normal;
+}
+
+.fontChanged(@fz, @lh) {
+  font-size: @fz;
+  line-height: @lh;
+}
+
+/* positioning */
+.abs(@d:block, @t, @r, @b, @l) {
+  position: absolute;
+  display: @d;
+  top: @t;
+  right: @r;
+  bottom: @b;
+  left: @l;
+}
+
+/* sizes */
+.size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+/* backgrpund */
+.bg(@bgp, @bgz) {
+  background-position: @bgp;
+  background-size: @bgz;
+  background-repeat: no-repeat;
+}

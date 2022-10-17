@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.badge {
+  display: block;
+  .base();
+  margin-bottom: 4px;
+  .font(12px, 700, 16px);
+  color: @primary;
+  text-transform: uppercase;
+  letter-spacing: 0.48px;
+
+  &--catalog {
+    @media (min-width: @desktop-width) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.title {
+  .base();
+  .font(24px, 700, 36px);
+
+  &--features {
+    margin-bottom: 36px;
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &--catalog {
+    margin-bottom: 20px;
+
+    @media (min-width: @desktop-width) {
+      grid-column: 1 / -1;
+      margin-bottom: 40px;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    .fontChanged(42px, 64px);
+  }
+}

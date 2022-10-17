@@ -1,0 +1,22 @@
+.nav {
+  display: none;
+  .reset();
+
+  &--open {
+    display: block;
+    z-index: 5;
+  }
+
+  @media (min-width: @tablet-width) {
+    display: block;
+  }
+}
+
+.nav.nojs {
+  display: block;
+}
+
+.nav__list {
+  .base();
+  background-color: @white;
+}

@@ -1,0 +1,42 @@
+.social {
+  .base();
+  .reset();
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.social__item {
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.social__link {
+  .base();
+  .resetLink();
+  .resetButton();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .size(40px, 40px);
+  color: @grey;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    color: @primary;
+    background-color: @secondary;
+  }
+
+  &:active {
+    color: @primary;
+    background-color: @primaryOpacity;
+  }
+}
+
+.social__link svg {
+  fill: currentColor;
+}

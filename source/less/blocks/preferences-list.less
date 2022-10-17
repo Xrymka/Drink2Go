@@ -1,0 +1,179 @@
+.preferences-list {
+  .reset();
+}
+
+.preferences-list__item:not(:last-child) {
+  margin-bottom: 21px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 19px;
+  }
+}
+
+.preferences-list__item--check:not(:last-child) {
+  margin-bottom: 19.5px;
+}
+
+.preferences-list__radio {
+  position: relative;
+  padding-left: 34px;
+}
+
+.preferences-list__checkbox {
+  position: relative;
+  padding-left: 54px;
+}
+
+.preferences-list__text {
+  .fontChanged(16px, 24px);
+  cursor: pointer;
+}
+
+.preferences-list__radio .preferences-list__text {
+  &::after {
+    content: "";
+    .abs(block, 50%, initial, initial, 4px);
+    .size(16px, 16px);
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: @transitionBgColor, @transitionOpacity;
+  }
+
+  &::before {
+    content: "";
+    .abs(block, 50%, initial, initial, 0);
+    .size(24px, 24px);
+    background-color: @white;
+    border: 2px solid @grey;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: @transitionBorder;
+  }
+}
+
+.preferences-list__radio input[type="radio"]:checked + .preferences-list__text {
+  &::before {
+    border-color: @primary;
+  }
+
+  &::after {
+    background-color: @primary;
+  }
+}
+
+.preferences-list__radio input[type="radio"]:hover:not(:disabled):not(:checked) + .preferences-list__text {
+  &::before {
+    border-color: @primary;
+  }
+
+  &::after {
+    background-color: @primaryOpacity;
+  }
+}
+
+.preferences-list__radio input[type="radio"]:disabled:hover + .preferences-list__text {
+  &::after {
+    background-color: transparent;
+  }
+}
+
+.preferences-list__radio input[type="radio"]:checked:disabled + .preferences-list__text {
+  color: @grey;
+  cursor: default;
+
+  &::before {
+    border-color: @greyLight;
+  }
+
+  &::after {
+    background-color: @greyLight;
+  }
+}
+
+.preferences-list__radio input[type="radio"]:disabled + .preferences-list__text {
+  color: @grey;
+  cursor: default;
+
+  &::before {
+    border-color: @greyLight;
+  }
+
+  &::after {
+    background-color: transparent;
+  }
+}
+
+.preferences-list__radio input[type="radio"]:focus:not(:disabled) + .preferences-list__text {
+  &::before {
+    border-color: @primary;
+  }
+
+  &::after {
+    background-color: @primaryOpacity;
+  }
+}
+
+.preferences-list__checkbox .preferences-list__text {
+  &::after {
+    content: "";
+    .abs(block, 50%, initial, initial, 2px);
+    .size(20px, 20px);
+    background-color: @white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: @transitionBgColor, @transitionOpacity, left 0.5s ease-in-out;
+  }
+
+  &::before {
+    content: "";
+    .abs(block, 50%, initial, initial, 0);
+    .size(42px, 24px);
+    background-color: @grey;
+    border-radius: 12px;
+    transform: translateY(-50%);
+    transition: @transitionBgColor, @transitionBorder, @transitionSize;
+  }
+}
+
+.preferences-list__checkbox input[type="checkbox"]:checked + .preferences-list__text {
+  &::after {
+    left: 20px;
+  }
+
+  &::before {
+    background-color: @primary;
+  }
+}
+
+.preferences-list__checkbox input[type="checkbox"]:focus:not(:disabled) + .preferences-list__text,
+.preferences-list__checkbox input[type="checkbox"]:hover:not(:disabled):not(:checked) + .preferences-list__text {
+  &::before {
+    border: 2px solid @primary;
+    background-color: @primaryOpacity;
+  }
+}
+
+.preferences-list__checkbox input[type="checkbox"]:disabled + .preferences-list__text {
+  cursor: default;
+
+  &::after {
+    background-color: @greyLightest;
+  }
+
+  &::before {
+    background-color: @greyLight;
+  }
+}
+
+.preferences-list__checkbox input[type="checkbox"]:disabled:checked + .preferences-list__text {
+  cursor: default;
+
+  &::after {
+    background-color: @grey;
+  }
+
+  &::before {
+    background-color: @greyLight;
+  }
+}
