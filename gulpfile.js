@@ -12,6 +12,13 @@ import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import del from 'del';
 import browser from 'browser-sync';
+// const gulp = require('gulp');
+// const ghPages = require('gulp-gh-pages');
+
+// gulp.task('deploy', function() {
+//     return gulp.src('./build/**/*')
+//         .pipe(ghPages());
+// });
 
 // Styles
 
